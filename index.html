@@ -30,6 +30,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  .head{scroll-margin-top:70px}
   body{
     background:var(--paper);
     color:var(--ink);
@@ -133,11 +134,75 @@
   .practical p span{color:var(--ink-soft)}
   .practical a{color:var(--sage-deep);text-decoration:none;border-bottom:1px solid var(--sage)}
 
+
+  /* ---------------- Area guide ---------------- */
+  .guide{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  @media(max-width:760px){.guide{grid-template-columns:1fr}}
+  .spot{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    box-shadow:0 10px 26px -22px rgba(67,66,59,.5)}
+  .spot .band{height:5px;background:var(--sg,var(--sage))}
+  .spot .body{padding:18px 20px 20px}
+  .spot h3{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:var(--ink);line-height:1}
+  .spot .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin:2px 0 8px}
+  .spot p{font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+  .spot .walk{font-size:12px;color:var(--ink);font-weight:600}
+  .spot .walk span{color:var(--sage-deep)}
+
+
+  /* ---------------- Massages ---------------- */
+  .massage{margin-top:26px;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:28px 30px;display:grid;grid-template-columns:1fr 1.1fr;gap:26px;align-items:center}
+  @media(max-width:680px){.massage{grid-template-columns:1fr;gap:18px}}
+  .massage h3{font-family:'Caveat',cursive;font-size:32px;font-weight:700;color:var(--sage-deep);line-height:1;margin-bottom:8px}
+  .massage p{font-size:13.5px;color:var(--ink);margin-bottom:6px}
+  .massage .ask{font-style:italic;color:var(--ink-soft)}
+  .price-list{list-style:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 0}
+  .price-list li{display:flex;justify-content:space-between;gap:14px;padding:9px 18px;font-size:13.5px;border-top:1px solid var(--paper-2)}
+  .price-list li:first-child{border-top:none}
+  .price-list .lab{color:var(--ink)}
+  .price-list .amt{font-weight:700;color:var(--sage-deep);white-space:nowrap}
+  .price-list .cab{font-size:12px;color:var(--ink-soft);font-style:italic;padding:10px 18px 4px}
+
+  /* ---------------- Wine ---------------- */
+  .wine{margin-top:26px}
+  .wine .intro{font-size:14px;color:var(--ink-soft);text-align:center;max-width:680px;margin:0 auto 22px}
+  .vines{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:680px){.vines{grid-template-columns:1fr}}
+  .appel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px 18px;border-left:5px solid var(--perriere)}
+  .appel h4{font-family:'Caveat',cursive;font-size:25px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px}
+  .appel .grape{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-deep);font-weight:700;margin-bottom:7px}
+  .appel p{font-size:13px;color:var(--ink-soft)}
+  .estates{margin-top:18px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:16px 22px}
+  .estates h4{font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--sage-deep);margin-bottom:4px}
+  .estates p{font-size:13px;color:var(--ink)}
+  .estates p span{color:var(--ink-soft)}
+
+
+  /* ---------------- Top menu ---------------- */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px;
+    max-width:1040px;margin:0 auto;padding:13px 22px}
+  .nav a{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;color:var(--ink-soft);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--chateau);border-bottom-color:var(--chateau)}
+  @media print{.nav{display:none}}
+
   footer{text-align:center;margin-top:40px}
   footer .fl{font-family:'Caveat',cursive;font-size:26px;color:var(--ink-soft)}
 </style>
 </head>
 <body>
+<nav class="nav">
+  <ul>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#weekend">Weekend</a></li>
+    <li><a href="#guide">Area Guide</a></li>
+    <li><a href="#velo">Vélo Vintage</a></li>
+    <li><a href="#massages">Massages</a></li>
+    <li><a href="#wine">Wines</a></li>
+  </ul>
+</nav>
 
 <header>
   <div class="invite">You are invited to celebrate</div>
@@ -168,7 +233,7 @@
 
 <div class="wrap">
 
-  <div class="head">
+  <div class="head" id="rooms">
     <div class="eyebrow">The Rooming List</div>
     <h2>Who Sleeps Where</h2>
     <div class="sub">everyone stays Friday &amp; Saturday — badges mark longer stays</div>
@@ -179,78 +244,78 @@
     <div class="house" style="--c:var(--chateau)">
       <div class="house-head"><h3>Le Château &amp; La Tour</h3><span class="count">11 rue Trochet · 9 rooms</span></div>
       <ul>
-        <li><div><span class="who">Maxime &amp; Ren Hui</span><span class="room">Panoramique</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Tugay</span><span class="room">Loire</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Mia &amp; John</span><span class="room">Russe</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Dominique &amp; Guylaine</span><span class="room">Verger</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Corinne &amp; Jean-Marie</span><span class="room">Donjon</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Jen &amp; Léo</span><span class="room">Patio</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Julien</span><span class="room">Angelot</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Valentin, Aly &amp; Margaux</span><span class="room">La Tour 1</span></div><span class="stay">THU → MON</span></li>
-        <li><div><span class="who">Sandra</span><span class="room">La Tour 2</span></div><span class="stay">THU → SUN</span></li>
+        <li><div><span class="who">Maxime &amp; Ren Hui</span><span class="room">Panoramique · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Tugay</span><span class="room">Loire · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Mia &amp; John</span><span class="room">Russe · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Dominique &amp; Guylaine</span><span class="room">Verger · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Corinne &amp; Jean-Marie</span><span class="room">Donjon · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Jen &amp; Léo</span><span class="room">Patio · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Julien</span><span class="room">Angelot · 1st floor</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Valentin, Aly &amp; Margaux</span><span class="room">La Tour · 1st floor</span><span class="note">shared bathroom in La Tour</span></div><span class="stay">THU → MON</span></li>
+        <li><div><span class="who">Sandra</span><span class="room">La Tour · 2nd floor</span><span class="note">shared bathroom in La Tour</span></div><span class="stay">THU → SUN</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--rempart)">
       <div class="house-head"><h3>Maison Rempart</h3><span class="count">13 bis rue Trochet · 5 suites</span></div>
       <ul>
-        <li><div><span class="who">Xavier &amp; Latifa</span><span class="room">Duplex Suite</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Marie &amp; Erwan</span><span class="room">Suite Indre</span></div><span class="stay">FRI → MON</span></li>
-        <li><div><span class="who">Florian &amp; Eugen</span><span class="room">Suite Loire</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Wendy &amp; Stefan</span><span class="room">Suite Maine</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Kryse &amp; Karl</span><span class="room">Suite Vienne</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Xavier &amp; Latifa</span><span class="room">Duplex Suite · ground &amp; 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Marie &amp; Erwan</span><span class="room">Suite Indre · ground floor</span></div><span class="stay">FRI → MON</span></li>
+        <li><div><span class="who">Florian &amp; Eugen</span><span class="room">Suite Loire · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Wendy &amp; Stefan</span><span class="room">Suite Maine · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Kryse &amp; Karl</span><span class="room">Suite Vienne · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--perriere)">
       <div class="house-head"><h3>Maison Perrière</h3><span class="count">1 rue des Perrières · 5 suites</span></div>
       <ul>
-        <li><div><span class="who">Shu &amp; Clovis</span><span class="room">Suite Panorama 1</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Guillaume &amp; Adeline</span><span class="room">Suite Panorama 2</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Mathieu &amp; Kevin</span><span class="room">Suite Vignes</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Thomas G. &amp; Jeanne</span><span class="room">Suite Four à Pain</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Lucas L. &amp; Naomi</span><span class="room">Suite Cour Pavée</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Shu &amp; Clovis</span><span class="room">Suite Panorama · 1st floor</span><span class="note">2-bedroom suite, shared bathroom</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Guillaume &amp; Adeline</span><span class="room">Suite Panorama · 1st floor</span><span class="note">2-bedroom suite, shared bathroom</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Mathieu &amp; Kevin</span><span class="room">Suite Vignes · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Thomas G. &amp; Jeanne</span><span class="room">Suite Four à Pain · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Lucas L. &amp; Naomi</span><span class="room">Suite Cour Pavée · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--compostelle)">
       <div class="house-head"><h3>Maison Compostelle</h3><span class="count">46 route de Compostelle · 4 rooms</span></div>
       <ul>
-        <li><div><span class="who">Pierrick &amp; Marlène</span><span class="room">Balzac</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Pierre &amp; Emilie</span><span class="room">Descartes</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Timothée &amp; Anaëlle</span><span class="room">Ernst</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Emmanuel</span><span class="room">Rodin</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Pierrick &amp; Marlène</span><span class="room">Balzac · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Pierre &amp; Emilie</span><span class="room">Descartes · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Timothée &amp; Anaëlle</span><span class="room">Ernst · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Emmanuel</span><span class="room">Rodin · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--katcha)">
       <div class="house-head"><h3>Maison Katcha</h3><span class="count">9 rue Trochet · 3 rooms</span></div>
       <ul>
-        <li><div><span class="who">Thibaut, Sophie, Eliott &amp; Capucine</span><span class="room">Chambre RDC</span></div><span class="stay">FRI → MON</span></li>
-        <li><div><span class="who">Lucas P. &amp; Rose</span><span class="room">Chambre 1</span></div><span class="stay">FRI → MON</span></li>
-        <li><div><span class="who">Mathieu &amp; Fahreha</span><span class="room">Chambre 2</span></div><span class="stay">FRI → MON</span></li>
+        <li><div><span class="who">Thibaut, Sophie, Eliott &amp; Capucine</span><span class="room">Chambre RDC · ground floor</span></div><span class="stay">FRI → MON</span></li>
+        <li><div><span class="who">Lucas P. &amp; Rose</span><span class="room">Chambre 1 · 1st floor</span><span class="note">en enfilade — opens to Chambre 2</span></div><span class="stay">FRI → MON</span></li>
+        <li><div><span class="who">Mathieu &amp; Fahreha</span><span class="room">Chambre 2 · 1st floor</span><span class="note">en enfilade — reached via Chambre 1</span></div><span class="stay">FRI → MON</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--loft)">
       <div class="house-head"><h3>Le Loft</h3><span class="count">2 rooms · private garden</span></div>
       <ul>
-        <li><div><span class="who">Edouard &amp; Doven</span><span class="room">Chambre 1</span></div><span class="stay">FRI → MON</span></li>
-        <li><div><span class="who">Arthur</span><span class="room">Chambre 2</span></div><span class="stay">THU → SUN</span></li>
+        <li><div><span class="who">Edouard &amp; Doven</span><span class="room">Chambre 1 · ground floor</span></div><span class="stay">FRI → MON</span></li>
+        <li><div><span class="who">Arthur</span><span class="room">Chambre 2 · 1st floor</span></div><span class="stay">THU → SUN</span></li>
       </ul>
     </div>
 
     <div class="house" style="--c:var(--pressoir)">
       <div class="house-head"><h3>Maison Pressoir</h3><span class="count">13 rue Trochet · 2 rooms</span></div>
       <ul>
-        <li><div><span class="who">Thomas B. &amp; Audrey</span><span class="room">Chambre 1</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Pierre-Alexandre &amp; Carole</span><span class="room">Chambre 2</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Thomas B. &amp; Audrey</span><span class="room">Chambre 1 · 1st floor</span><span class="note">shared bathroom</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Pierre-Alexandre &amp; Carole</span><span class="room">Chambre 2 · 1st floor</span><span class="note">shared bathroom</span></div><span class="stay base">FRI → SUN</span></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="head">
+  <div class="head" id="weekend">
     <div class="eyebrow">The Programme</div>
     <h2>The Weekend at a Glance</h2>
     <div class="sub">more details to follow — keep your evenings free</div>
@@ -275,7 +340,7 @@
     <div class="day">
       <div class="dt">Sun · 28 June</div>
       <div class="ttl">Slow Farewell</div>
-      <p>Brunch at the château, then departures — some of us linger a last night.</p>
+      <p>Brunch at the château, then departures. Last dinner at <strong>Auberge de la Route d'Or</strong>, facing the Collégiale.</p>
     </div>
   </div>
 
@@ -293,6 +358,132 @@
     </div>
   </div>
 
+
+  <div class="head" id="guide">
+    <div class="eyebrow">A Little Guide</div>
+    <h2>Around the Village</h2>
+    <div class="sub">three places worth your boots within a few minutes of the château</div>
+  </div>
+
+  <div class="guide">
+    <div class="spot" style="--sg:var(--river)">
+      <div class="band"></div>
+      <div class="body">
+        <h3>Candes-Saint-Martin</h3>
+        <div class="tag">Right at our doorstep</div>
+        <p>Our own village — one of the official <em>Plus Beaux Villages de France</em>, set where the Loire meets the Vienne. Wander the lower lane where the old Loire boatmen lived, find the troglodyte dwellings in the cliff, and step inside the Gothic Collégiale Saint-Martin.</p>
+        <p class="walk"><span>On foot</span> · just below the château</p>
+      </div>
+    </div>
+
+    <div class="spot" style="--sg:var(--chateau)">
+      <div class="band"></div>
+      <div class="body">
+        <h3>Montsoreau</h3>
+        <div class="tag">The next village over</div>
+        <p>A Renaissance château built right in the riverbed of the Loire — the only one of its kind — now a striking contemporary-art museum (the world's largest Art &amp; Language collection). The rooftop terraces give a 360° view over the river and vineyards. The village is itself a <em>Plus Beau Village</em>.</p>
+        <p class="walk"><span>A few minutes</span> · short walk or drive along the river</p>
+      </div>
+    </div>
+
+    <div class="spot" style="--sg:var(--perriere)">
+      <div class="band"></div>
+      <div class="body">
+        <h3>Fontevraud Abbey</h3>
+        <div class="tag">A short drive inland</div>
+        <p>One of Europe's great medieval abbeys and the royal resting place of the Plantagenets — Henry II, Eleanor of Aquitaine and Richard the Lionheart all lie here beneath painted effigies. Don't miss the extraordinary Romanesque kitchen and the vast cloisters.</p>
+        <p class="walk"><span>~15 min</span> · by car, inland from the river</p>
+      </div>
+    </div>
+
+    <div class="spot" style="--sg:var(--compostelle)">
+      <div class="band"></div>
+      <div class="body">
+        <h3>Château de Brézé</h3>
+        <div class="tag">A short drive south</div>
+        <p>A Renaissance château hiding an astonishing secret: beneath it lies a whole troglodyte fortress — over a kilometre of carved galleries, kitchens, cellars and an underground bakery — ringed by the deepest dry moat in Europe (18 m). The estate still makes its own Saumur wine.</p>
+        <p class="walk"><span>~20 min</span> · by car, vineyards en route</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="head" id="velo">
+    <div class="eyebrow">Happening This Weekend</div>
+    <h2>Anjou Vélo Vintage</h2>
+    <div class="sub">26–28 June 2026 · the very weekend we're here</div>
+  </div>
+
+  <div class="massage" style="grid-template-columns:1fr">
+    <div>
+      <h3>🚲 Retro bikes take over Saumur</h3>
+      <p>By happy coincidence, Europe's largest vintage cycling festival fills nearby <strong>Saumur</strong> while we're at the château. Expect period bikes, swing bands, a free vintage village in the old town, and local fouées and Saumur wines everywhere — all in glorious retro dress (polka dots, braces, berets).</p>
+      <p>The signed rides (30–65 km, registration required) roll through the Saumurois vineyards on Saturday and Sunday; the <strong>vintage village in central Saumur is free</strong> and open all weekend if you just fancy a wander. A fun, optional detour about 20 minutes from us.</p>
+      <p class="ask">More at anjou-velo-vintage.com</p>
+    </div>
+  </div>
+
+  <div class="head" id="massages">
+    <div class="eyebrow">Treat Yourself</div>
+    <h2>Massages at the Château</h2>
+    <div class="sub">in the troglodyte spa, by the orchard</div>
+  </div>
+
+  <div class="massage">
+    <div>
+      <h3>🧘 Book ahead</h3>
+      <p>The château has <strong>two duo cabins and one solo cabin</strong>. If you'd like a massage during the weekend, let me know in advance so we can reserve your slot.</p>
+      <p class="ask">Tell me your preferred length and whether it's solo or duo, and I'll arrange it.</p>
+    </div>
+    <ul class="price-list">
+      <li><span class="lab">60 min · solo</span><span class="amt">€115</span></li>
+      <li><span class="lab">60 min · duo</span><span class="amt">€230</span></li>
+      <li><span class="lab">90 min · solo</span><span class="amt">€165</span></li>
+      <li><span class="lab">90 min · duo</span><span class="amt">€330</span></li>
+      <li><span class="lab">20 min · express</span><span class="amt">€53</span></li>
+      <li class="cab">2 duo cabins &amp; 1 solo cabin available</li>
+    </ul>
+  </div>
+
+  <div class="head" id="wine">
+    <div class="eyebrow">A Glass or Two</div>
+    <h2>Saumur &amp; Its Vineyards</h2>
+    <div class="sub">we're in the heart of Loire wine country — here's the lay of the land</div>
+  </div>
+
+  <div class="wine">
+    <p class="intro">The vines around us grow on <em>tuffeau</em>, the soft white limestone the châteaux are also carved from. Two grapes rule: Cabernet Franc (the local "Breton") for reds, and Chenin Blanc for whites and the famous sparklers — many aged in cellars dug straight into the rock.</p>
+
+    <div class="vines">
+      <div class="appel">
+        <h4>Saumur-Champigny</h4>
+        <div class="grape">Cabernet Franc · red</div>
+        <p>The star red of the area, from eight villages just upriver — including Montsoreau next door. Fresh, chalky and floral in the classic style; deeper and age-worthy from the newer growers.</p>
+      </div>
+      <div class="appel">
+        <h4>Saumur Blanc</h4>
+        <div class="grape">Chenin Blanc · white</div>
+        <p>Dry, mineral whites off the same limestone — bright and food-friendly, with a fine chalky backbone.</p>
+      </div>
+      <div class="appel">
+        <h4>Saumur Fines Bulles &amp; Crémant de Loire</h4>
+        <div class="grape">Chenin · sparkling</div>
+        <p>The region's calling card. The big sparkling houses (Bouvet-Ladubay, Ackerman, Langlois) sit just west of Saumur, their bottles ageing in tuffeau caves.</p>
+      </div>
+      <div class="appel">
+        <h4>Chinon · Bourgueil · St-Nicolas</h4>
+        <div class="grape">Cabernet Franc · red</div>
+        <p>Just across the Vienne and the Loire, 20–30 min away — more excellent Cabernet Franc country, perfect for a tasting detour.</p>
+      </div>
+    </div>
+
+    <div class="estates">
+      <h4>A few estates worth seeking out</h4>
+      <p>All in the Saumur area: <strong>Clos Rougeard</strong>, <strong>Sylvain Dittière</strong>, <strong>Théo Blet</strong>, <strong>Guiberteau</strong>, <strong>Domaine du Collier</strong> and <strong>Château Yvonne</strong>.</p>
+      <p><span>Some will welcome very small groups for a visit, but only by arrangement — please get in touch with them well in advance.</span></p>
+    </div>
+  </div>
   <footer>
     <div class="fl">see you on the Loire ✦</div>
   </footer>
