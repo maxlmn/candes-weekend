@@ -187,6 +187,12 @@
   .nav a{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
     font-weight:600;color:var(--ink-soft);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
   .nav a:hover{color:var(--chateau);border-bottom-color:var(--chateau)}
+  .nav .lang{margin-left:auto;display:flex;gap:0;align-items:center}
+  .nav .lang a{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:700;color:var(--ink-soft);text-decoration:none;padding:4px 8px;border-bottom:2px solid transparent}
+  .nav .lang a.on{color:var(--chateau);border-bottom-color:var(--chateau)}
+  .nav .lang .sep{color:var(--line);font-weight:400}
+  .nav ul{align-items:center}
   @media print{.nav{display:none}}
 
   footer{text-align:center;margin-top:40px}
@@ -202,6 +208,7 @@
     <li><a href="#velo">Vélo Vintage</a></li>
     <li><a href="#massages">Massages</a></li>
     <li><a href="#wine">Wines</a></li>
+    <li class="lang"><a href="index.html" class="on">EN</a><span class="sep">/</span><a href="index-fr.html" class="">FR</a></li>
   </ul>
 </nav>
 
