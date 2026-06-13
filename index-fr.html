@@ -178,6 +178,20 @@
   .estates p{font-size:13px;color:var(--ink)}
   .estates p span{color:var(--ink-soft)}
 
+  .menus{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  @media(max-width:800px){.menus{grid-template-columns:1fr}}
+  .menu{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+  .menu .band{height:5px;background:var(--mc,var(--sage))}
+  .menu .body{padding:20px 22px 22px}
+  .menu .dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);font-weight:700}
+  .menu h3{font-family:'Caveat',cursive;font-size:30px;font-weight:700;color:var(--ink);line-height:1;margin:2px 0 4px}
+  .menu .mmeta{font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.45;margin-bottom:8px}
+  .menu .course{margin-top:13px}
+  .menu .course h4{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--chateau);font-weight:700;margin-bottom:4px}
+  .menu .course p{font-size:13px;color:var(--ink-soft);line-height:1.5}
+  .menu .course p strong{color:var(--ink);font-weight:600}
+  .menu .mnote{font-size:12px;color:var(--ink-soft);font-style:italic;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
 
   /* ---------------- Top menu ---------------- */
   .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
@@ -204,6 +218,7 @@
   <ul>
     <li><a href="#rooms">Chambres</a></li>
     <li><a href="#weekend">Week-end</a></li>
+    <li><a href="#menus">Dîners</a></li>
     <li><a href="#guide">Les environs</a></li>
     <li><a href="#velo">Vélo Vintage</a></li>
     <li><a href="#massages">Massages</a></li>
@@ -293,7 +308,7 @@
         <li><div><span class="who">Pierre &amp; Emilie</span><span class="room">Descartes · 1er étage</span></div><span class="stay base">VEN → DIM</span></li>
         <li><div><span class="who">Timothée &amp; Anaëlle</span><span class="room">Ernst · rez-de-chaussée</span></div><span class="stay base">VEN → DIM</span></li>
         <li><div><span class="who">Emmanuel</span><span class="room">Rodin · rez-de-chaussée</span></div><span class="stay base">VEN → DIM</span></li>
-        <li><div><span class="who">Simon</span><span class="room">Rabelais · 1er étage</span></div><span class="stay base">VEN → DIM</span></li>
+        <li><div><span class="who">Simon &amp; Emilie</span><span class="room">Rabelais · 1er étage</span></div><span class="stay base">VEN → DIM</span></li>
       </ul>
     </div>
 
@@ -350,6 +365,43 @@
       <div class="dt">Dim · 28 juin</div>
       <div class="ttl">Au revoir en douceur</div>
       <p>Brunch au château, puis départs. Dernier dîner à l’<strong>Auberge de la Route d’Or</strong>, face à la Collégiale.</p>
+    </div>
+  </div>
+
+  <div class="head" id="menus">
+    <div class="eyebrow">À table</div>
+    <h2>Les dîners au château</h2>
+    <div class="sub">ce que la cuisine a prévu pour les soirées de vendredi &amp; samedi</div>
+  </div>
+
+  <div class="menus">
+    <div class="menu" style="--mc:var(--sage)">
+      <div class="band"></div>
+      <div class="body">
+        <div class="dt">Ven · 26 juin</div>
+        <h3>Dîner d&#8217;accueil</h3>
+        <div class="mmeta">Buffet salades · grillades · desserts — par le Chef Alexandre Verna, Restaurant Le Baladin</div>
+        <div class="course"><h4>Grignotage</h4><p>Carottes, chou-fleur &amp; tortillas, avec un éventail de sauces : tartare, mayonnaise curry-paprika, crème ciboulette, moutarde, ketchup &amp; mayonnaise.</p></div>
+        <div class="course"><h4>Buffet de salades</h4><p>Salade, tomates, concombres, féta &amp; olives · endives, pommes, poires, bleu &amp; noix.</p></div>
+        <div class="course"><h4>Buffet de viandes &amp; poissons</h4><p>Pilons de poulet · brochettes de bœuf · brochettes de saumon &amp; gambas.</p></div>
+        <div class="course"><h4>Garnitures</h4><p>Pommes de terre au four · poêlée estivale (courgettes, poivrons, aubergines) · galipettes au chèvre.</p></div>
+        <div class="course"><h4>Buffet de desserts</h4><p>Entremet aux fruits (fraise, cerise ou pommes) ou chocolat · salade de fraises au vin rouge pétillant.</p></div>
+        <div class="mnote">Service au buffet &mdash; servez-vous.</div>
+      </div>
+    </div>
+
+    <div class="menu" style="--mc:var(--chateau)">
+      <div class="band"></div>
+      <div class="body">
+        <div class="dt">Sam · 27 juin</div>
+        <h3>Dîner d&#8217;anniversaire</h3>
+        <div class="mmeta">Cocktail 19h00 · dîner à table 20h30 — thème &#8220;Sobre et Chic&#8221;, par LB Traiteur Pom&#8217;poire</div>
+        <div class="course"><h4>Cocktail · planche champêtre</h4><p>Ste-Maure de Touraine, rillons de Touraine, tome de Touraine &amp; terrine de campagne à la tomate confite (pickles d&#8217;oignons rouges, cornichons, moutarde, beurre &amp; pain de campagne) ; tapenade betterave &amp; billes de framboise ; moricette mayonnaise aux herbes, légumes croquants &amp; saumon ; mini-burger bœuf cheddar ; maki végé &amp; mayonnaise au saté.</p></div>
+        <div class="course"><h4>Entrées à partager</h4><p>Bouquet de crevettes marinées au safran de Touraine &amp; mayonnaise aux herbes · persillé de jambonneau, pickles d&#8217;oignons rouges &amp; moutarde de Brive.</p></div>
+        <div class="course"><h4>Plat · un choix, deux garnitures</h4><p>Pintade fermière rôtie · &#8220;Roi Rose&#8221; confit, jus réduit à la sauge · bœuf confit façon bourguignon au vin de Chinon &mdash; avec pommes grenailles persillées &amp; minis légumes printaniers de Touraine au thym.</p></div>
+        <div class="course"><h4>Desserts</h4><p>Tarte vigneronne · mousse au chocolat et ses pépites.</p></div>
+        <div class="mnote">Service au centre des tables. Café &amp; thé en libre-service.</div>
+      </div>
     </div>
   </div>
 

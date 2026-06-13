@@ -178,6 +178,20 @@
   .estates p{font-size:13px;color:var(--ink)}
   .estates p span{color:var(--ink-soft)}
 
+  .menus{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  @media(max-width:800px){.menus{grid-template-columns:1fr}}
+  .menu{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+  .menu .band{height:5px;background:var(--mc,var(--sage))}
+  .menu .body{padding:20px 22px 22px}
+  .menu .dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);font-weight:700}
+  .menu h3{font-family:'Caveat',cursive;font-size:30px;font-weight:700;color:var(--ink);line-height:1;margin:2px 0 4px}
+  .menu .mmeta{font-size:12px;color:var(--ink-soft);font-style:italic;line-height:1.45;margin-bottom:8px}
+  .menu .course{margin-top:13px}
+  .menu .course h4{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--chateau);font-weight:700;margin-bottom:4px}
+  .menu .course p{font-size:13px;color:var(--ink-soft);line-height:1.5}
+  .menu .course p strong{color:var(--ink);font-weight:600}
+  .menu .mnote{font-size:12px;color:var(--ink-soft);font-style:italic;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
 
   /* ---------------- Top menu ---------------- */
   .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
@@ -204,6 +218,7 @@
   <ul>
     <li><a href="#rooms">Rooms</a></li>
     <li><a href="#weekend">Weekend</a></li>
+    <li><a href="#menus">Dinners</a></li>
     <li><a href="#guide">Area Guide</a></li>
     <li><a href="#velo">Vélo Vintage</a></li>
     <li><a href="#massages">Massages</a></li>
@@ -293,7 +308,7 @@
         <li><div><span class="who">Pierre &amp; Emilie</span><span class="room">Descartes · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
         <li><div><span class="who">Timothée &amp; Anaëlle</span><span class="room">Ernst · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
         <li><div><span class="who">Emmanuel</span><span class="room">Rodin · ground floor</span></div><span class="stay base">FRI → SUN</span></li>
-        <li><div><span class="who">Simon</span><span class="room">Rabelais · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
+        <li><div><span class="who">Simon &amp; Emilie</span><span class="room">Rabelais · 1st floor</span></div><span class="stay base">FRI → SUN</span></li>
       </ul>
     </div>
 
@@ -350,6 +365,43 @@
       <div class="dt">Sun · 28 June</div>
       <div class="ttl">Slow Farewell</div>
       <p>Brunch at the château, then departures. Last dinner at <strong>Auberge de la Route d'Or</strong>, facing the Collégiale.</p>
+    </div>
+  </div>
+
+  <div class="head" id="menus">
+    <div class="eyebrow">At the Table</div>
+    <h2>The Château Dinners</h2>
+    <div class="sub">what the kitchen has planned for Friday &amp; Saturday evenings</div>
+  </div>
+
+  <div class="menus">
+    <div class="menu" style="--mc:var(--sage)">
+      <div class="band"></div>
+      <div class="body">
+        <div class="dt">Fri · 26 June</div>
+        <h3>Welcome Dinner</h3>
+        <div class="mmeta">Salads · grills · desserts buffet — by Chef Alexandre Verna, Restaurant Le Baladin</div>
+        <div class="course"><h4>To nibble</h4><p>Carrots, cauliflower &amp; tortillas, with a row of sauces: tartare, curry-paprika mayo, chive cream, mustard, ketchup &amp; mayonnaise.</p></div>
+        <div class="course"><h4>Salad buffet</h4><p>Leaves, tomato, cucumber, feta &amp; olives · endive, apple, pear, blue cheese &amp; walnut.</p></div>
+        <div class="course"><h4>Grilled meats &amp; fish</h4><p>Chicken drumsticks · beef skewers · salmon &amp; prawn skewers.</p></div>
+        <div class="course"><h4>Sides</h4><p>Baked potatoes · summer vegetables (courgette, pepper, aubergine) · goat&#8217;s-cheese galipettes.</p></div>
+        <div class="course"><h4>Dessert buffet</h4><p>Fruit entremet (strawberry, cherry or apple) or chocolate · strawberries in sparkling red wine.</p></div>
+        <div class="mnote">Served buffet-style &mdash; help yourself.</div>
+      </div>
+    </div>
+
+    <div class="menu" style="--mc:var(--chateau)">
+      <div class="band"></div>
+      <div class="body">
+        <div class="dt">Sat · 27 June</div>
+        <h3>Birthday Dinner</h3>
+        <div class="mmeta">Cocktail 7pm · seated dinner 8:30pm — theme &#8220;Sobre et Chic&#8221;, by LB Traiteur Pom&#8217;poire</div>
+        <div class="course"><h4>Cocktail · country platter</h4><p>Ste-Maure de Touraine, Touraine rillons, Tome de Touraine &amp; country terrine with confit tomato (red-onion pickles, gherkins, mustard, butter &amp; sliced bread); beetroot tapenade with raspberry pearls; herb-mayo moricette with crunchy veg &amp; salmon; mini beef &amp; cheddar burger; veggie maki with saté mayo.</p></div>
+        <div class="course"><h4>Starters to share</h4><p>Prawns marinated in Touraine saffron with herb mayo · ham-hock persillé with red-onion pickles &amp; Brive mustard.</p></div>
+        <div class="course"><h4>Main · one choice, two sides</h4><p>Roast farmhouse guinea fowl · &#8220;Roi Rose&#8221; confit with sage jus · beef confit bourguignon in Chinon wine &mdash; with parsleyed grenaille potatoes &amp; spring baby vegetables with thyme.</p></div>
+        <div class="course"><h4>Desserts</h4><p>Vigneronne tart · chocolate mousse with chips.</p></div>
+        <div class="mnote">Served to the centre of the table. Coffee &amp; tea, self-service.</div>
+      </div>
     </div>
   </div>
 
